@@ -1,0 +1,39 @@
+<br /><br /><br />
+<div class="container">
+<h1>Bienvenido</h1>
+
+<form>
+  Consultar usuario por cédula:
+  <input type="input" onkeypress='return event.charCode >= 48 && event.charCode <= 57' name="userId" [(ngModel)] = "userId" required>
+  <button type ="submit" (click)="getUser(userId)" class="btn btn-primary">Consultar</button>
+</form>
+
+  <a routerLink="/nuevo">
+  <button type ="button" class="btn btn-success">Crear Nuevo Usuario</button>
+  </a>
+
+  <hr />
+  <div *ngIf="show">
+  <h3>Resultado:</h3><br />
+  <label>Cédula:</label>
+  {{user.userId}}<br>
+  <label>Nombre:</label>
+  {{user.name}}<br>
+  <label>Fecha de nacimiento:</label>
+  {{user.birthday}}<br>
+  <label>Dirección:</label>
+  {{user.homeAddress}}<br>
+  <label>Hobbie:</label>
+  {{user.hobbie}}<br>
+  <label>Descripción personal:</label>
+  {{user.description}}<br>
+  <label>Teléfono:</label>
+  {{user.telephone}}<br>
+  <label>Género:</label>
+  {{user.gender}}<br>
+  <label>Estado Civil:</label>
+  {{user.civilStatus}}<br>
+  <label>Email:</label>
+  {{user.email}}<br>
+  </div>
+</div>

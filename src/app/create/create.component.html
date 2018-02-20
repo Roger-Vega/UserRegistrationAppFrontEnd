@@ -1,0 +1,61 @@
+<div class="container">
+  <h1>Ingrese los datos:</h1>
+  <hr />
+
+  <form>
+    <div class="form-group">
+      <label>Nombre</label>
+      <input type="text" class="form-control" placeholder="Nombre" [(ngModel)] = "user.name" name="name" required>
+    </div>
+    <div class="form-group">
+      <label>Cédula</label>
+      <input type="input" onkeypress='return event.charCode >= 48 && event.charCode <= 57' class="form-control" placeholder="Cédula" [(ngModel)] = "user.userId" name="userId" required>
+    </div>
+    <div class="form-group">
+      <label>Fecha de nacimiento</label>
+      <input type="date" class="form-control" [(ngModel)] = "user.birthday" name="birthday" required>
+    </div>
+    <div class="form-group">
+      <label>Dirección</label>
+      <input type="text" class="form-control" placeholder="Dirección" [(ngModel)] = "user.homeAddress" name="homeAddress" required>
+    </div>
+    <div class="form-group">
+      <label>Hobbie</label>
+      <input type="text" class="form-control" placeholder="Hobbie" [(ngModel)] = "user.hobbie" name="hobbie" required>
+    </div>
+    <div class="form-group">
+      <label>Teléfono</label>
+      <input type="number" class="form-control" placeholder="Teléfono" [(ngModel)] = "user.telephone" name="telephone" required>
+    </div>
+    <div class="form-group">
+      <label>Email</label>
+      <input type="email" class="form-control" placeholder="example@mail.com" [(ngModel)] = "user.email" name="email" required>
+    </div>
+    <div class="form-group">
+      <label>Estado civil</label>
+      <input class="form-control" list="civil-status" placeholder="Elija uno:" [(ngModel)] = "user.civilStatus" name="civilStatus" required>
+      <datalist id="civil-status">
+        <option value="Soltero">
+        <option value="Casado">
+        <option value="Divorciado">
+        <option value="Unión Libre">
+        <option value="Viudo">
+      </datalist>
+    </div>
+    <div class="form-group">
+      <label>Género</label>
+      <input class="form-control" list="genders" placeholder="Elija uno:" [(ngModel)] = "user.gender" name="gender" required>
+      <datalist id="genders">
+        <option value="M" label="Masculino">
+        <option value="F" label="Femenino">
+      </datalist>
+    </div>
+    <div class="form-group">
+      <label>Descripción personal</label>
+        <textarea class="form-control" placeholder="Breve descripción personal" [(ngModel)] = "user.description" name="description" required></textarea>
+    </div>
+    <button type ="submit" (click)="saveUser()" class="btn btn-primary">Crear</button>
+    <a routerLink="/"><button type="button" class="btn btn-default">Cancelar</button></a>
+
+  </form>
+</div>
